@@ -1,17 +1,9 @@
 import {Schema} from 'mongoose'
 import { producer } from '..';
+import {UserEntity} from '../../../domain/entities'
 
 
-export const userCreatedProducer = async(
-    data:{
-        _id: Schema.Types.ObjectId;
-        username: string;
-        email: string;
-        password:string;
-        role: string;
-        isBlocked:Boolean
-    }
-)=>{
+export const userCreatedProducer = async( data: UserEntity )=>{
     try {
         await producer.connect();
         console.log(data.role,"roleeeeeee");

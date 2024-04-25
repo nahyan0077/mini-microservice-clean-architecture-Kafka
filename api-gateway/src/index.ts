@@ -11,6 +11,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use('/auth',proxy("http://localhost:3000/"))
+app.use('/product',proxy("http://localhost:4000/"))
 
 app.listen(PORT,()=>{
     console.log(`The gateway is listening to the port ${PORT}`);

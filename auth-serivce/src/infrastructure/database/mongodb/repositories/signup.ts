@@ -1,4 +1,4 @@
-import {UserEntity, UserLoginEntity} from '../../../../domain/entities'
+import {UserEntity} from '../../../../domain/entities'
 import {User} from '../models/loginCridentials'
 
 export const signup = async (data: UserEntity) : Promise < UserEntity | null > => {
