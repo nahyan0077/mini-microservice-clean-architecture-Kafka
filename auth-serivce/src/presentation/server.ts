@@ -1,0 +1,22 @@
+import express, {Application, NextFunction, Request, Response} from 'express'
+import dotenv from 'dotenv'
+import cookieParser from "cookie-parser";
+import { authRoutes } from "../infrastructure/routes/authRoutes";
+import { dependencies } from "../config/dependencies";
+
+dotenv.config();
+
+const app: Application = express()
+const PORT: number = 3000
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
+app.use("/", authRoutes(dependencies));
+
+app.listen(PORT,()=>{
+    console.log(`The auth-service is listening to the port ${PORT}`);
+})
+
+export default app
