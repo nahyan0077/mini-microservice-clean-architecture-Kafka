@@ -20,7 +20,7 @@ export const addProductController = (dependencies: IDependencies) => {
       const product: Product | null = await addProductUseCase(
         dependencies
       ).execute(data);
-      res.status(201).json({ success: true, data: product });
+      
       if (product) {
         const addedProduct = {
           _id: product._id,
