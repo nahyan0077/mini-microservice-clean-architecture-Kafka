@@ -1,7 +1,7 @@
-import { ObjectId } from "mongoose";
+import { Types } from "mongoose";
 
 export interface ProductRequest {
-  _id: ObjectId;
+  _id?: Types.ObjectId;
   name: string;
   description: string;
   price: number;

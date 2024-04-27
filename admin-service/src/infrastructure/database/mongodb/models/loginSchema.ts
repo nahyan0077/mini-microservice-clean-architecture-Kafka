@@ -28,4 +28,5 @@ const adminSchema = new Schema({
   timestamps: true
 });
 
-export const Admin = mongoose.model<AdminEntity>("logincredentials", adminSchema);
+// export const Admin = mongoose.model<AdminEntity>("logincredentials", adminSchema);
+export const Admin = mongoose.model<AdminEntity>("users", adminSchema);

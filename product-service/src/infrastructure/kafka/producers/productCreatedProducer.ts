@@ -1,15 +1,8 @@
 import {producer} from ".."
 import { Types } from "mongoose";
+import {ProductRequest} from '../../../domain/entities'
 
-export const productCreatedProducer = async(
-    data:{
-        _id?:Types.ObjectId;
-        name:string;
-        description:string;
-        price:number;
-        stock:number;
-    }
-)=>{
+export const productCreatedProducer = async( data:ProductRequest )=>{
     try {
         await producer.connect();
 
@@ -20,7 +13,8 @@ export const productCreatedProducer = async(
                 value: JSON.stringify(data)
             }]
         };
-
+        console.log("kafka productssssss",message);
+        
         await  producer.send(message);
 
     } catch (error:any) {
