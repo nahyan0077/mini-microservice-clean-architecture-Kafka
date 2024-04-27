@@ -9,7 +9,6 @@ export interface CartEntity {
 }
 
 
-
 export interface AddToCartRequest {
     userId: Types.ObjectId;
     productId: Types.ObjectId;
