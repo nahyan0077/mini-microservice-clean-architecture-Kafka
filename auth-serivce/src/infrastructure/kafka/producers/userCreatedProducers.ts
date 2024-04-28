@@ -7,10 +7,11 @@ export const userCreatedProducer = async( data: UserEntity )=>{
     try {
         await producer.connect();
         console.log(data.role,"roleeeeeee");
+        console.log(data,"dataaaaaa");
         
         if(data.role === 'user' || data.role === 'admin'){
             const message = {
-                topic: 'to-user',
+                topic: 'to-user1',
                 messages: [{
                     key: 'userCreated',
                     value: JSON.stringify(data)

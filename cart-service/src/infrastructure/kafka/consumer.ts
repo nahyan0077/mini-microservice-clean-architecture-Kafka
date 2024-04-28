@@ -7,7 +7,7 @@ export const runConsumer = async()=>{
         await consumer.connect();
 
         await consumer.subscribe({
-            topic:'to-user',
+            topic:'to-user1',
             fromBeginning: true
         });
 
